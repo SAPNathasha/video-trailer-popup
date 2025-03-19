@@ -1,14 +1,17 @@
-const btnEl = document.querySelector(".btn");
-const closeIconEl = document.querySelector(".close-icon");
-const trailerContainerEl = document.querySelector(".trailer-container");
-const videoEl = document.querySelector("video");
-
-btnEl.addEventListener("click", () => {
-  trailerContainerEl.classList.remove("active");
-});
-
-closeIconEl.addEventListener("click", () => {
-  trailerContainerEl.classList.add("active");
-  videoEl.pause();
-  videoEl.currentTime = 0;
-});
+$(document).ready(function () {
+    const $btnEl = $(".btn");
+    const $closeIconEl = $(".close-icon");
+    const $trailerContainerEl = $(".trailer-container");
+    const $videoEl = $("video");
+  
+    $btnEl.on("click", function () {
+      $trailerContainerEl.removeClass("active");
+    });
+  
+    $closeIconEl.on("click", function () {
+      $trailerContainerEl.addClass("active");
+      $videoEl.get(0).pause();
+      $videoEl.get(0).currentTime = 0;
+    });
+  });
+  
